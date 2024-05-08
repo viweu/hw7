@@ -1,0 +1,8 @@
+package notebook.view;
+
+import notebook.model.Entry;
+
+public interface NotebookView {
+
+    void setEntries(List<Entry> entries);
+}
