@@ -1,0 +1,23 @@
+package notebook.model;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public interface Notebook {
+
+    List<Entry> getEntries();
+
+    void addEntry(Entry entry);
+
+    void removeEntry(Entry entry);
+
+    List<Entry> getEntriesForDay(LocalDate date);
+
+    List<Entry> getEntriesForWeek(LocalDate date);
+
+    void sortBy(Comparator<Entry> comparator);
+
+    void sortByDate();
+
+    void sortByTitle();
+}
