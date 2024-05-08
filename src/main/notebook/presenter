@@ -1,0 +1,45 @@
+package notebook.presenter;
+
+import notebook.model.Notebook;
+import notebook.view.NotebookView;
+
+public class NotebookPresenter {
+
+    private Notebook model;
+    private NotebookView view;
+
+    public NotebookPresenter(Notebook model, NotebookView view) {
+        this.model = model;
+        this.view = view;
+    }
+
+    public void loadEntries() {
+        List<Entry> entries = model.getEntries();
+        view.setEntries(entries);
+    }
+
+    public void addEntry(Entry entry) {
+        model.addEntry(entry);
+        loadEntries();
+    }
+
+    public void removeEntry(Entry entry) {
+        model.removeEntry(entry);
+        loadEntries();
+    }
+
+    public void sortBy(Comparator<Entry> comparator) {
+        model.sortBy(comparator);
+        loadEntries();
+    }
+
+    public void sortByDate() {
+        model.sortByDate();
+        loadEntries();
+    }
+
+    public void sortByTitle() {
+        model.sortByTitle();
+        loadEntries();
+    }
+}
